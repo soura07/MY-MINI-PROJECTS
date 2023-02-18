@@ -1,0 +1,96 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@1,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-1: transparent;
+    --color-2: springgreen;
+}
+
+body {
+    font-family: work sans, sans-serif;
+    font-weight: bold;
+    font-size: 10vw;
+    background-color: black;;
+}
+
+.stripes {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: -5vw;
+    bottom: 0;
+    right: 0;
+    display: grid;
+    place-items: center;
+    color: red
+}
+
+.stripes:before {
+    content: "SOURADEEP";
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: repeating-linear-gradient(var(--color-1) 0px,
+            var(--color-1) 4px,
+            var(--color-2) 5px,
+            var(--color-2) 6px,
+            var(--color-1) 6px);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: flush 0.25s infinite linear;
+    display: grid;
+    place-items: center;
+    z-index: 10;
+}
+
+@keyframes flush {
+    to {
+        background-position: 0 6px;
+        
+    }
+}
+
+.stripes:after {
+    content: "";
+    display: block;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 10vw;
+    height: 10vw;
+    border: 50px solid rgb(0, 42, 255);
+    border-right-color: transparent;
+    border-left-color: transparent;
+    z-index: -10;
+    border-radius: 50%;
+    animation: border 1s infinite steps(8);
+}
+
+@keyframes border {
+    0% {
+        transform: rotate(0) scale(0);
+    }
+    50% {
+        
+    }
+
+    100% {
+        transform: rotate(720deg) scale(10);
+        border: 50px solid rgb(0, 42, 255);
+        border-right-color: transparent;
+        border-left-color: transparent;
+    }
+}
